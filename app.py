@@ -26,6 +26,7 @@ floor_area = right.slider('What is the area of the house (sqm)',70, 200)
 age_hdb = left.slider('The age of the HDB', 5, 70)
 max_floor = right.slider('What is the maximum floor?', 2, 50)
 mrt_distance = left.slider('Distance to nearest MRT', 0, 2500)
+
 region = st.selectbox('Which region in Singapore?', ('North','North East','Central','West','East'))
 # towns = ['Jurong West', 'Woodlands', 'Sengkang', 'Tampines', 'Yishun', 'Bedok', 'Punggol', 'Hougang', 'Ang Mo Kio',
 #                  'Choa Chu Kang', 'Bukit Merah', 'Bukit Batok', 'Bukit Panjang', 'Toa Payoh', 'Pasir Ris', 'Queenstown', 
@@ -56,7 +57,7 @@ region_to_num_dict = {'North':0.3,'North East':0.4,'Central':0.8,'West':0.1,'Eas
 add_on_constant = {'One Room':0.8, 'Two Room':1.4, 'Three Room':2.8, 'Four Room':3.7, 'Five Room':4.3, 'Executive':4.7,
                                  'Multigeneration':5.4}
 
-estimated_value = round(y_pred[0] + 88888*add_on_constant[f'{num_rooms}'],-3+288888*region_to_num_dict[f'{region}'])
+estimated_value = round(y_pred[0] + 88888*add_on_constant[f'{num_rooms}']+288888*region_to_num_dict[f'{region}'],-3)
 
 
 #r2_val = metrics.r2_score(y_test, y_pred)
