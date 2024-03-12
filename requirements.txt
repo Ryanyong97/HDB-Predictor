@@ -1,5 +1,5 @@
 pandas
 streamlit
-scikit-learn==1.4.1
+scikit-learn
 oauth2client
 streamlit_autorefresh
