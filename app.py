@@ -20,7 +20,7 @@ left, right = st.columns((4,4))
 num_rooms = left.selectbox('No. of Rooms', ('One Room', 'Two Room', 'Three Room', 'Four Room', 'Five Room', 'Executive',
                                  'Multigeneration'))
 
-floor_cat = right.selectbox('floor cat', (3, 2, 1))
+floor_category = right.selectbox('floor cat', (3, 2, 1))
 
 floor_area = right.slider('What is the area of the house (sqm)',70, 200)
 
@@ -50,7 +50,7 @@ model = pickle.load(model_file)
 
 y_pred = model.predict([[floor_area, tranc_year_default, tranc_month_default, 
                         age_hdb, max_floor, multistorey_cp_default, mall_within_2km_default, 
-                        hawker_within_2km_default, mrt_distance, bus_interchange_default,  floor_density_default, floor_cat]])
+                        hawker_within_2km_default, mrt_distance, bus_interchange_default,  floor_density_default, floor_category]])
 
 string_to_num_dict = {}
 
