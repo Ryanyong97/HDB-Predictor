@@ -19,8 +19,6 @@ left, right = st.columns((4,4))
 #st.sidebar.subheader('Select the following attributes')
 num_rooms = left.selectbox('No. of Rooms', ('One Room', 'Two Room', 'Three Room', 'Four Room', 'Five Room', 'Executive',
                                  'Multigeneration'))
-region = st.selectbox('Which region in Singapore?', ('North','North East','Central','West','East'))
-
 floor_category = right.selectbox('floor cat', (3, 2, 1))
 
 floor_area = right.slider('What is the area of the house (sqm)',70, 200)
@@ -28,7 +26,7 @@ floor_area = right.slider('What is the area of the house (sqm)',70, 200)
 age_hdb = left.slider('The age of the HDB', 5, 70)
 max_floor = right.slider('What is the maximum floor?', 2, 50)
 mrt_distance = left.slider('Distance to nearest MRT', 0, 2500)
-
+region = st.selectbox('Which region in Singapore?', ('North','North East','Central','West','East'))
 # towns = ['Jurong West', 'Woodlands', 'Sengkang', 'Tampines', 'Yishun', 'Bedok', 'Punggol', 'Hougang', 'Ang Mo Kio',
 #                  'Choa Chu Kang', 'Bukit Merah', 'Bukit Batok', 'Bukit Panjang', 'Toa Payoh', 'Pasir Ris', 'Queenstown', 
 #                  'Geylang', 'Sembawang', 'Clementi', 'Jurong East', 'Kallang', 'Serangoon', 'Bishan', 'Novena', 'Marine Parade',
