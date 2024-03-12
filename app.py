@@ -45,8 +45,8 @@ bus_interchange_default = 0
 floor_density_default = 0.5
 
 # load the train model
-with open('hdb_model.pkl', 'rb') as rf:
-    model = pickle.load(rf)
+model_file = open('hdb_model.pkl', 'rb')
+model = pickle.load(model_file)
 
 y_pred = model.predict([[floor_area, tranc_year_default, tranc_month_default, 
                         age_hdb, max_floor, multistorey_cp_default, mall_within_2km_default, 
