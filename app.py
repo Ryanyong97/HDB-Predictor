@@ -52,6 +52,7 @@ y_pred = model.predict([[floor_area, tranc_year_default, tranc_month_default,
                         age_hdb, max_floor, multistorey_cp_default, mall_within_2km_default, 
                         hawker_within_2km_default, mrt_distance, bus_interchange_default,  floor_density_default, floor_category]])
 
+region = st.selectbox('Which region in Singapore?', ('North','North East','Central','West','East'))
 region_to_num_dict = {'North':0.3,'North East':0.4,'Central':0.8,'West':0.1,'East':0.2}
 
 add_on_constant = {'One Room':0.8, 'Two Room':1.4, 'Three Room':2.8, 'Four Room':3.7, 'Five Room':4.3, 'Executive':4.7,
