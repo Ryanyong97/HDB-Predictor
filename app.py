@@ -58,7 +58,7 @@ add_on_constant = {'One Room':0.8, 'Two Room':1.4, 'Three Room':2.8, 'Four Room'
                                  'Multigeneration':5.4}
 
 estimated_value = round(y_pred[0] + 88888*add_on_constant[f'{num_rooms}']+288888*region_to_num_dict[f'{region}'],-3)
-
+original_value = y_pred[0]
 
 #r2_val = metrics.r2_score(y_test, y_pred)
 
@@ -67,6 +67,7 @@ st.header('Estimated Valuation:')
 #st.write('R2 value of this model')
 #groupby_species_mean = hdb.groupby('Species').mean()
 st.markdown(f'<h1 style="text-align: left;">${estimated_value:.0f}</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="text-align: left;">${original_value:.0f}</h1>', unsafe_allow_html=True)
 
 # Disclaimer
 st.write('---')
