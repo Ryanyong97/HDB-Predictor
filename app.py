@@ -19,6 +19,7 @@ left, right = st.columns((4,4))
 #st.sidebar.subheader('Select the following attributes')
 num_rooms = left.selectbox('No. of Rooms', ('One Room', 'Two Room', 'Three Room', 'Four Room', 'Five Room', 'Executive',
                                  'Multigeneration'))
+region = st.selectbox('Which region in Singapore?', ('North','North East','Central','West','East'))
 
 floor_category = right.selectbox('floor cat', (3, 2, 1))
 
@@ -52,12 +53,12 @@ y_pred = model.predict([[floor_area, tranc_year_default, tranc_month_default,
                         age_hdb, max_floor, multistorey_cp_default, mall_within_2km_default, 
                         hawker_within_2km_default, mrt_distance, bus_interchange_default,  floor_density_default, floor_category]])
 
-string_to_num_dict = {}
+region_to_num_dict = {'North':0.3,'North East':0.4,'Central':0.8,'West':0.1,'East':0.2}
 
 add_on_constant = {'One Room':0.8, 'Two Room':1.4, 'Three Room':2.8, 'Four Room':3.7, 'Five Room':4.3, 'Executive':4.7,
                                  'Multigeneration':5.4}
 
-estimated_value = round(y_pred[0] + 88888*add_on_constant[f'{num_rooms}'],-3)
+estimated_value = round(y_pred[0] + 88888*add_on_constant[f'{num_rooms}'],-3+288888*region_to_num_dict[f'{region}'])
 
 
 #r2_val = metrics.r2_score(y_test, y_pred)
