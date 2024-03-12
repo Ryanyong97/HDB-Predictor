@@ -1,0 +1,6 @@
+pandas
+streamlit
+scikit-learn==1.2.1
+oauth2client
+streamlit_autorefresh
+pickle
